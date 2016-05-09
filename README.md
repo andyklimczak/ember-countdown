@@ -1,6 +1,10 @@
 # Ember-countdown-shim
 
-This README outlines the details of collaborating on this Ember addon.
+Ember-cli shim for [countdownjs](https://github.com/mckamey/countdownjs), allowing it to be consumed as an ES6 module.
+
+```javascript
+import countdown from 'countdownjs';
+```
 
 ## Installation
 
