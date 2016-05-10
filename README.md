@@ -3,11 +3,14 @@
 
 Ember-cli shim for [countdownjs](https://github.com/mckamey/countdownjs), allowing it to be consumed as an ES6 module.
 
+```shell
+ember install ember-countdown-shim
+```
 ```javascript
 import countdown from 'countdownjs';
 ```
 
-## Installation
+## Development Installation
 
 * `git clone` this repository
 * `npm install`
