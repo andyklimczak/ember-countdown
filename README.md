@@ -1,4 +1,5 @@
 # Ember-countdown-shim
+[![Build Status](https://travis-ci.org/andyklimczak/ember-countdown-shim.svg?branch=master)](https://travis-ci.org/andyklimczak/ember-countdown-shim)
 
 Ember-cli shim for [countdownjs](https://github.com/mckamey/countdownjs), allowing it to be consumed as an ES6 module.
 
