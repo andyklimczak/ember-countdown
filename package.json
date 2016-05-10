@@ -1,7 +1,7 @@
 {
   "name": "ember-countdown-shim",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember addon to allow countdownjs to be consumed as an es6 module",
   "directories": {
     "doc": "doc",
     "test": "tests"
