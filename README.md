@@ -13,7 +13,7 @@ import countdown from 'countdownjs';
 As a component:
 ```javascript
 {{countdown-string startDate=657050213000}}
-{{countdown-string startDate='1992/11/24'}}
+{{countdown-html startDate='1992/11/24'}}
 ```
 
 ## Development Installation
