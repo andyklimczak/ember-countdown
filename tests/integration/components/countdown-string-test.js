@@ -6,19 +6,21 @@ moduleForComponent('countdown-string', 'Integration | Component | countdown stri
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000 interval=0}}`);
+  assert.equal(this.$().text().trim(), '25 years, 6 months, 18 days, 1 hour, 54 minutes and 29 seconds');
+});
 
-  this.render(hbs`{{countdown-string}}`);
+test('it renders with max', function(assert) {
+  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000 interval=0 max=3}}`);
+  assert.equal(this.$().text().trim(), '25 years, 6 months and 18 days');
+});
 
-  assert.equal(this.$().text().trim(), '');
+test('it renders with fromNow suffix', function(assert) {
+  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000 interval=0 suffix=true}}`);
+  assert.equal(this.$().text().trim(), '25 years, 6 months, 18 days, 1 hour, 54 minutes and 29 seconds ago');
+});
 
-  // Template block usage:
-  this.render(hbs`
-    {{#countdown-string}}
-      template block text
-    {{/countdown-string}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+test('it renders with toNow suffix', function(assert) {
+  this.render(hbs`{{countdown-string endDate="2015/04/20" startDate="2020/01/01" interval=0 suffix=true}}`);
+  assert.equal(this.$().text().trim(), '4 years, 8 months and 11 days left');
 });
