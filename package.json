@@ -1,7 +1,7 @@
 {
-  "name": "ember-countdown-shim",
+  "name": "ember-countdown",
   "version": "0.0.2",
-  "description": "Ember addon to allow countdownjs to be consumed as an es6 module",
+  "description": "Ember addon to allow use of countdownjs library",
   "directories": {
     "doc": "doc",
     "test": "tests"

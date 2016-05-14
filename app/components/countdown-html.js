@@ -1,3 +1,3 @@
-import CountdownHtml from 'ember-countdown-shim/components/countdown-html';
+import CountdownHtml from 'ember-countdown/components/countdown-html';
 
 export default CountdownHtml;

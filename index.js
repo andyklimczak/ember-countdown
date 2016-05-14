@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-countdown-shim',
+  name: 'ember-countdown',
 
   included: function included(app) {
     this._super.included(app);

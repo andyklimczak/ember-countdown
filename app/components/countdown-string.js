@@ -1,3 +1,3 @@
-import CountdownString from 'ember-countdown-shim/components/countdown-string';
+import CountdownString from 'ember-countdown/components/countdown-string';
 
 export default CountdownString;

@@ -39,3 +39,8 @@ test('it renders with overriding all the labels', function(assert) {
   assert.equal(this.$('div').html().trim(), '<span>25 anos</span> + <span>6 meses</span> + <span>18 dias</span> + <span>1 hora</span> + <span>54 minutos</span> e <span>29 segundos</span>');
   assert.equal(this.$().text().trim(), '25 anos + 6 meses + 18 dias + 1 hora + 54 minutos e 29 segundos');
 });
+
+test('it renders two instances with the correct labels for each', function(assert) {
+  this.render(hbs`{{countdown-string endDate="2015/04/20" startDate="2020/01/01" interval=0 lastLabel=' first '}}{{countdown-string endDate="2015/04/20" startDate="2020/01/01" interval=0 lastLabel=' second '}}`);
+  assert.equal(this.$().text().trim(), '4 years, 8 months first 11 days\n4 years, 8 months second 11 days');
+});

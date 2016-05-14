@@ -1,13 +1,19 @@
-# Ember-countdown-shim
-[![Build Status](https://travis-ci.org/andyklimczak/ember-countdown-shim.svg?branch=master)](https://travis-ci.org/andyklimczak/ember-countdown-shim)
+# Ember-countdown
+[![Build Status](https://travis-ci.org/andyklimczak/ember-countdown.svg?branch=master)](https://travis-ci.org/andyklimczak/ember-countdown)
 
-Ember-cli shim for [countdownjs](https://github.com/mckamey/countdownjs), allowing it to be consumed as an ES6 module.
+Ember-cli addon for [countdownjs](https://github.com/mckamey/countdownjs), allowing it to be consumed as an ES6 module.
 
 ```shell
-ember install ember-countdown-shim
+ember install ember-countdown
 ```
 ```javascript
 import countdown from 'countdownjs';
+```
+
+As a component:
+```javascript
+{{countdown-string startDate=657050213000}}
+{{countdown-string startDate='1992/11/24'}}
 ```
 
 ## Development Installation
