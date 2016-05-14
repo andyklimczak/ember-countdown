@@ -16,8 +16,8 @@ test('it renders with max', function(assert) {
 });
 
 test('it renders with fromNow suffix', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0 max=3 suffix=true}}`);
-  assert.equal(this.$('div').html().trim(), '<span>25 years</span>, <span>6 months</span> and <span>18 days</span> ago');
+  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0 suffix=true}}`);
+  assert.equal(this.$('div').html().trim(), '<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> and <span>29 seconds</span> ago');
 });
 
 test('it renders with toNow suffix', function(assert) {
@@ -26,11 +26,20 @@ test('it renders with toNow suffix', function(assert) {
 });
 
 test('it renders with specified tag', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0 max=3 htmlTag='p'}}`);
-  assert.equal(this.$('div').html().trim(), '<p>25 years</p>, <p>6 months</p> and <p>18 days</p>');
+  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0 htmlTag='p'}}`);
+  assert.equal(this.$('div').html().trim(), '<p>25 years</p>, <p>6 months</p>, <p>18 days</p>, <p>1 hour</p>, <p>54 minutes</p> and <p>29 seconds</p>');
 });
 
 test('it renders without last label', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0 max=3 htmlTag='p' lastLabel=' '}}`);
-  assert.equal(this.$('div').html().trim(), '<p>25 years</p>, <p>6 months</p> <p>18 days</p>');
+  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0 lastLabel=' '}}`);
+  assert.equal(this.$('div').html().trim(), '<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> <span>29 seconds</span>');
+});
+
+test('it renders with overriding all the labels', function(assert) {
+  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0
+              singularLabel=' milissegundo| segundo| minuto| hora| dia| semana| mês| ano| década| século| milênio'
+              pluralLabel=' milissegundos| segundos| minutos| horas| dias| semanas| meses| anos| décadas| séculos| milênios'
+              lastLabel=' e '
+              delimLabel=' + '}}`);
+  assert.equal(this.$('div').html().trim(), '<span>25 anos</span> + <span>6 meses</span> + <span>18 dias</span> + <span>1 hora</span> + <span>54 minutos</span> e <span>29 segundos</span>');
 });
