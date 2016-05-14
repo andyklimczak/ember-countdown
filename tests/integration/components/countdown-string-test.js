@@ -24,3 +24,8 @@ test('it renders with toNow suffix', function(assert) {
   this.render(hbs`{{countdown-string endDate="2015/04/20" startDate="2020/01/01" interval=0 suffix=true}}`);
   assert.equal(this.$().text().trim(), '4 years, 8 months and 11 days left');
 });
+
+test('it renders without last label', function(assert) {
+  this.render(hbs`{{countdown-string endDate="2015/04/20" startDate="2020/01/01" interval=0 lastLabel=' '}}`);
+  assert.equal(this.$().text().trim(), '4 years, 8 months 11 days');
+});

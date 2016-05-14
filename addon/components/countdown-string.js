@@ -13,6 +13,11 @@ export default Ember.Component.extend({
   suffix: false,
   suffixFromNow: 'ago',
   suffixToNow: 'left',
+  singularLabel: null,
+  pluralLabel: null,
+  lastLabel: null,
+  delimLabel: null,
+  emptyLabel: null,
   parsedStartDate: Ember.computed('startDate', {
     get() {
       return new Date(this.get('startDate'));
@@ -26,6 +31,7 @@ export default Ember.Component.extend({
 
   init() {
     this._super(...arguments);
+    countdown.resetLabels();
     this.start();
   },
 
@@ -45,6 +51,7 @@ export default Ember.Component.extend({
   },
 
   countdownText() {
+    countdown.setLabels(this.get('singularLabel'), this.get('pluralLabel'), this.get('lastLabel'), this.get('delimLabel'), this.get('emptyLabel'));
     const newCountdown = countdown(this.get('parsedStartDate'), this.get('parsedEndDate'), this.get('units'), this.get('max'));
 
     if(this.get('suffix') && newCountdown.value > 0) {

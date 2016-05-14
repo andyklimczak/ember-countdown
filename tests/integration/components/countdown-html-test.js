@@ -29,3 +29,8 @@ test('it renders with specified tag', function(assert) {
   this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0 max=3 htmlTag='p'}}`);
   assert.equal(this.$('div').html().trim(), '<p>25 years</p>, <p>6 months</p> and <p>18 days</p>');
 });
+
+test('it renders without last label', function(assert) {
+  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 interval=0 max=3 htmlTag='p' lastLabel=' '}}`);
+  assert.equal(this.$('div').html().trim(), '<p>25 years</p>, <p>6 months</p> <p>18 days</p>');
+});
