@@ -4,6 +4,7 @@ import countdown from 'countdownjs';
 
 export default Ember.Component.extend({
   layout: layout,
+  tagName: '',
   startDate: null,
   endDate: Date.now(),
   units: countdown.DEFAULT,
