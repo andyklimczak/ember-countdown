@@ -21,7 +21,7 @@ As a component:
 ```
 => <span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>7 hours</span>, <span>43 minutes</span> and <span>57 seconds</span>
 
-Further usage examples for the two components with all optional parameters explored can be seen in the [integrationt tests](tests/integrations/components). Explanation of the parameters is documented in the [countdownjs](https://github.com/mckamey/countdownjs) readme.
+Further usage examples for the two components with all optional parameters explored can be seen in the integration tests. Explanation of the parameters is documented in the [countdownjs](https://github.com/mckamey/countdownjs) readme.
 
 ## Development Installation
 
