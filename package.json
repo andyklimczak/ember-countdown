@@ -1,6 +1,6 @@
 {
   "name": "ember-countdown",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Ember addon to allow use of countdownjs library",
   "directories": {
     "doc": "doc",
