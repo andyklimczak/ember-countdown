@@ -1,55 +1,10 @@
-import Ember from 'ember';
 import layout from '../templates/components/countdown-html';
 import countdown from 'countdownjs';
+import CountdownComponent from 'ember-countdown/components/countdown-component';
 
-export default Ember.Component.extend({
-  layout: layout,
-  startDate: null,
-  endDate: Date.now(),
-  units: countdown.DEFAULT,
-  max: null,
-  text: null,
-  interval: 1000,
-  suffix: false,
-  suffixFromNow: 'ago',
-  suffixToNow: 'left',
+export default CountdownComponent.extend({
   htmlTag: 'span',
-  singularLabel: null,
-  pluralLabel: null,
-  lastLabel: null,
-  delimLabel: null,
-  emptyLabel: null,
-  parsedStartDate: Ember.computed('startDate', {
-    get() {
-      return new Date(this.get('startDate'));
-    }
-  }),
-  parsedEndDate: Ember.computed('endDate', {
-    get() {
-      return new Date(this.get('endDate'));
-    }
-  }),
-
-  init() {
-    this._super(...arguments);
-    countdown.resetLabels();
-    this.start();
-  },
-
-  start() {
-    this.countdownText();
-    if(this.get('interval')) {
-      this.update();
-    }
-  },
-
-  update() {
-    Ember.run.later(this, function() {
-      this.set('endDate', new Date());
-      this.countdownText();
-      this.update();
-    }, this.get('interval'));
-  },
+  layout,
 
   countdownText() {
     countdown.setLabels(this.get('singularLabel'), this.get('pluralLabel'), this.get('lastLabel'), this.get('delimLabel'), this.get('emptyLabel'));
