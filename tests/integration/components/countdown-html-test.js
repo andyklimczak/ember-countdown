@@ -41,7 +41,7 @@ test('it renders without last label', function(assert) {
 });
 
 test('it renders with overriding all the labels', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 
+  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000
               singularLabel=' milissegundo| segundo| minuto| hora| dia| semana| mês| ano| década| século| milênio'
               pluralLabel=' milissegundos| segundos| minutos| horas| dias| semanas| meses| anos| décadas| séculos| milênios'
               lastLabel=' e '

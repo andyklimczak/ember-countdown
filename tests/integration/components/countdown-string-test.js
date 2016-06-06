@@ -36,12 +36,11 @@ test('it renders without last label', function(assert) {
 });
 
 test('it renders with overriding all the labels', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 
+  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000
               singularLabel=' milissegundo| segundo| minuto| hora| dia| semana| mês| ano| década| século| milênio'
               pluralLabel=' milissegundos| segundos| minutos| horas| dias| semanas| meses| anos| décadas| séculos| milênios'
               lastLabel=' e '
               delimLabel=' + '}}`);
-  assert.equal(this.$().html().trim(), '<span>25 anos</span> + <span>6 meses</span> + <span>18 dias</span> + <span>1 hora</span> + <span>54 minutos</span> e <span>29 segundos</span>');
   assert.equal(this.$().text().trim(), '25 anos + 6 meses + 18 dias + 1 hora + 54 minutos e 29 segundos');
 });
 
