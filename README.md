@@ -23,6 +23,27 @@ As a component:
 ```
 => ```<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>7 hours</span>, <span>43 minutes</span> and <span>57 seconds</span>```
 
+To create a countdown that only has months and days, create a new component in your project that extends the components from this addon:
+```javascript
+import countdown from 'countdownjs';
+import CountdownString from 'ember-countdown/components/countdown-string';
+
+export default CountdownString.extend({
+  units: countdown.MONTHS|countdown.DAYS
+});
+```
+
+Other values can be overriden as well:
+```javascript
+import countdown from 'countdownjs';
+import CountdownHTML from 'ember-countdown/components/countdown-html';
+
+export default CountdownHTML.extend({
+  htmlTag: 'b',
+  units: countdown.SECONDS
+});
+```
+
 Further usage examples for the two components with all optional parameters explored can be seen in the integration tests. Explanation of the parameters is documented in the [countdownjs](https://github.com/mckamey/countdownjs) readme.
 
 ## Development Installation

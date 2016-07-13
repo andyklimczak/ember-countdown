@@ -1,8 +1,12 @@
 <h2 id="title">Welcome to Ember</h2>
 
 
-{{countdown-string startDate=657050213000 interval=1000}}
+Countdown String: {{countdown-string startDate=657050213000 interval=1000}}
 <br>
-{{countdown-html startDate=657050213000 interval=1000}}
+Countdown HTML: {{countdown-html startDate=657050213000 interval=1000}}
+<br>
+Countdown Custom (Months/Days unit): {{countdown-custom-months-days startDate="1/1/2020" interval=1000}}
+<br>
+Countdown Custom (Seconds unit): {{countdown-custom-seconds startDate="1/1/2010" interval=1000}}
 
 {{outlet}}
