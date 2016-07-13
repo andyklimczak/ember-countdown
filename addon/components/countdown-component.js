@@ -46,7 +46,7 @@ export default Ember.Component.extend({
 
   update() {
     Ember.run.later(this, function() {
-      if(!this.isDestroyed() || !this.isDestroying) {
+      if(!this.isDestroyed || !this.isDestroying) {
         this.set('endDate', new Date());
         this.countdownText();
         this.update();
