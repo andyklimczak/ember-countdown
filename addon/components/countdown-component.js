@@ -46,9 +46,11 @@ export default Ember.Component.extend({
 
   update() {
     Ember.run.later(this, function() {
-      this.set('endDate', new Date());
-      this.countdownText();
-      this.update();
+      if(!this.isDestroyed() || !this.isDestroying) {
+        this.set('endDate', new Date());
+        this.countdownText();
+        this.update();
+      }
     }, this.get('interval'));
   }
 });
