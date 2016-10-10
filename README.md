@@ -3,7 +3,7 @@
 [![ember-badge](http://embadge.io/v1/badge.svg?start=1.13.0)](http://embadge.io/)
 
 
-Ember-cli addon for [countdownjs](https://github.com/mckamey/countdownjs), allowing it to be consumed as an ES6 module.
+Ember-cli addon for [countdownjs](https://github.com/mckamey/countdownjs), and allowing countdownjs to be consumed as an ES6 module in your ember application.
 
 ```shell
 ember install ember-countdown
