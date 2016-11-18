@@ -45,7 +45,7 @@ export default CountdownHTML.extend({
 ```
 WARNING: If you use `ember generate component my-countdown`, make sure to delete the generated template file `components/my-countdown.hbs` or nothing will appear.
 
-Further usage examples for the two components with all optional parameters explored can be seen in the integration tests. Explanation of the parameters is documented in the [countdownjs](https://github.com/mckamey/countdownjs) readme.
+Further usage examples for the two components with all optional parameters explored can be seen in the [integration tests](https://github.com/andyklimczak/ember-countdown/tree/master/tests/integration/components) and the addon's [dummy app](https://github.com/andyklimczak/ember-countdown/blob/master/tests/dummy/app/templates/application.hbs). Explanation of the parameters is documented in the [countdownjs](https://github.com/mckamey/countdownjs) readme.
 
 ## Development Installation
 
