@@ -1,6 +1,10 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
+/**
+ * NOTE: These tests specify an 'endDate' value in the component handlebars. This is only done in order to make the tests reliable.
+ * In normal cases, you would not override 'endDate', and let it be defined as its default
+ */
 moduleForComponent('countdown-string', 'Integration | Component | countdown string', {
   integration: true
 });
