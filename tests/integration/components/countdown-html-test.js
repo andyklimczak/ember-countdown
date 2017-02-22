@@ -54,6 +54,6 @@ test('it renders with overriding all the labels', function(assert) {
 });
 
 test('it renders two instances with the correct labels for each', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 lastLabel=' first '}}{{countdown-html startDate=657050213000 endDate=1463255482000  lastLabel=' second '}}`);
-  assert.equal(this.$().text().trim(), '25 years, 6 months, 18 days, 1 hour, 54 minutes first 29 seconds\n25 years, 6 months, 18 days, 1 hour, 54 minutes second 29 seconds');
+  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 lastLabel=' first label '}}{{countdown-html startDate=657050213000 endDate=1463255482000  lastLabel=' second label '}}`);
+  assert.equal(this.$().html().trim(), '<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> first label <span>29 seconds</span>\n<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> second label <span>29 seconds</span>');
 });
