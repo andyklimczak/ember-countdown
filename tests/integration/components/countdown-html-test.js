@@ -10,22 +10,22 @@ moduleForComponent('countdown-html', 'Integration | Component | countdown html',
 });
 
 test('it renders', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000}}`);
+  this.render(hbs`{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT"}}`);
   assert.equal(this.$().html().trim(), '<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> and <span>29 seconds</span>');
 });
 
 test('it renders when setting ember container tag', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 tagName="div"}}`);
+  this.render(hbs`{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" tagName="div"}}`);
   assert.equal(this.$('div').html().trim(), '<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> and <span>29 seconds</span>');
 });
 
 test('it renders with max', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 max=3}}`);
+  this.render(hbs`{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" max=3}}`);
   assert.equal(this.$().html().trim(), '<span>25 years</span>, <span>6 months</span> and <span>18 days</span>');
 });
 
 test('it renders with fromNow suffix', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 suffix=true}}`);
+  this.render(hbs`{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" suffix=true}}`);
   assert.equal(this.$().html().trim(), '<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> and <span>29 seconds</span> ago');
 });
 
@@ -35,17 +35,17 @@ test('it renders with toNow suffix', function(assert) {
 });
 
 test('it renders with specified tag', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 htmlTag='p'}}`);
+  this.render(hbs`{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" htmlTag='p'}}`);
   assert.equal(this.$().html().trim(), '<p>25 years</p>, <p>6 months</p>, <p>18 days</p>, <p>1 hour</p>, <p>54 minutes</p> and <p>29 seconds</p>');
 });
 
 test('it renders without last label', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 lastLabel=' '}}`);
+  this.render(hbs`{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" lastLabel=' '}}`);
   assert.equal(this.$().html().trim(), '<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> <span>29 seconds</span>');
 });
 
 test('it renders with overriding all the labels', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000
+  this.render(hbs`{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT"
               singularLabel=' milissegundo| segundo| minuto| hora| dia| semana| mês| ano| década| século| milênio'
               pluralLabel=' milissegundos| segundos| minutos| horas| dias| semanas| meses| anos| décadas| séculos| milênios'
               lastLabel=' e '
@@ -54,6 +54,6 @@ test('it renders with overriding all the labels', function(assert) {
 });
 
 test('it renders two instances with the correct labels for each', function(assert) {
-  this.render(hbs`{{countdown-html startDate=657050213000 endDate=1463255482000 lastLabel=' first label '}}{{countdown-html startDate=657050213000 endDate=1463255482000  lastLabel=' second label '}}`);
+  this.render(hbs`{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" lastLabel=' first label '}}{{countdown-html startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" lastLabel=' second label '}}`);
   assert.equal(this.$().html().trim(), '<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> first label <span>29 seconds</span>\n<span>25 years</span>, <span>6 months</span>, <span>18 days</span>, <span>1 hour</span>, <span>54 minutes</span> second label <span>29 seconds</span>');
 });
