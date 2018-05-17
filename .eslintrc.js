@@ -4,7 +4,16 @@ module.exports = {
     ecmaVersion: 2017,
     sourceType: 'module'
   },
-  extends: 'eslint:recommended',
+  plugins: [
+    'ember'
+  ],
+  extends: [
+    'eslint:recommended',
+    'plugin:ember/recommended'
+  ],
+  rules: {
+    'ember/no-old-shims': 'error'
+  },
   env: {
     browser: true
   },
