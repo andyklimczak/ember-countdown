@@ -1,5 +1,9 @@
-/* jshint node: true */
+/* eslint-env node */
 'use strict';
+
+var path = require('path');
+var Funnel = require('broccoli-funnel');
+var MergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'ember-countdown',
@@ -7,14 +11,15 @@ module.exports = {
   included: function included(app) {
     this._super.included(app);
 
-    app.import({
-      development: app.bowerDirectory + '/countdownjs/countdown.js',
-      production: app.bowerDirectory + '/countdownjs/countdown.min.js'
+    this.import('vendor/countdown.js');
+    this.import('vendor/shims/countdown.js');
+  },
+
+  treeForVendor(vendorTree) {
+    var countdownTree = new Funnel(path.dirname(require.resolve('countdown/countdown.js')), {
+      files: ['countdown.js'],
     });
-    app.import('vendor/ember-countdown.js', {
-      exports: {
-        countdown: ['default']
-      }
-    });
+
+    return new MergeTrees([vendorTree, countdownTree]);
   }
 };

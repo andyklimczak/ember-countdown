@@ -4,7 +4,5 @@ module.exports = {
 
   normalizeEntityName: function() {},
 
-  afterInstall: function(options) {
-    return this.addBowerPackageToProject('countdownjs');
-  }
+  afterInstall: function(options) { }
 };

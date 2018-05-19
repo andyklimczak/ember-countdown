@@ -51,7 +51,6 @@ Further usage examples for the two components with all optional parameters explo
 
 * `git clone` this repository
 * `npm install`
-* `bower install`
 
 ### Running
 
@@ -68,4 +67,4 @@ Further usage examples for the two components with all optional parameters explo
 
 * `ember build`
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
