@@ -8,7 +8,7 @@
     "countdownjs"
   ],
   "license": "MIT",
-  "author": "Andy Klimcza",
+  "author": "Andy Klimczak",
   "directories": {
     "doc": "doc",
     "test": "tests"
