@@ -10,22 +10,22 @@ moduleForComponent('countdown-string', 'Integration | Component | countdown stri
 });
 
 test('it renders', function(assert) {
-  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000}}`);
+  this.render(hbs`{{countdown-string startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT"}}`);
   assert.equal(this.$().text().trim(), '25 years, 6 months, 18 days, 1 hour, 54 minutes and 29 seconds');
 });
 
 test('it renders when setting the ember tagname', function(assert) {
-  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000 tagName="p"}}`);
+  this.render(hbs`{{countdown-string startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" tagName="p"}}`);
   assert.equal(this.$('p').text().trim(), '25 years, 6 months, 18 days, 1 hour, 54 minutes and 29 seconds');
 });
 
 test('it renders with max', function(assert) {
-  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000 max=3}}`);
+  this.render(hbs`{{countdown-string startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" max=3}}`);
   assert.equal(this.$().text().trim(), '25 years, 6 months and 18 days');
 });
 
 test('it renders with fromNow suffix', function(assert) {
-  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000 suffix=true}}`);
+  this.render(hbs`{{countdown-string startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT" suffix=true}}`);
   assert.equal(this.$().text().trim(), '25 years, 6 months, 18 days, 1 hour, 54 minutes and 29 seconds ago');
 });
 
@@ -40,7 +40,7 @@ test('it renders without last label', function(assert) {
 });
 
 test('it renders with overriding all the labels', function(assert) {
-  this.render(hbs`{{countdown-string startDate=657050213000 endDate=1463255482000
+  this.render(hbs`{{countdown-string startDate="10/27/1990 17:56:53 GMT" endDate="5/14/2016 19:51:22 GMT"
               singularLabel=' milissegundo| segundo| minuto| hora| dia| semana| mês| ano| década| século| milênio'
               pluralLabel=' milissegundos| segundos| minutos| horas| dias| semanas| meses| anos| décadas| séculos| milênios'
               lastLabel=' e '

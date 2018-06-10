@@ -1,8 +1,8 @@
 <h2 id="title">Welcome to Ember Countdown Addon</h2>
 
-Countdown String: {{countdown-string startDate=657050213000}}
+Countdown String: {{countdown-string startDate="10/27/1990 17:56:53 GMT" }}
 <br>
-Countdown HTML: {{countdown-html startDate=657050213000 interval=1000}}
+Countdown HTML: {{countdown-html startDate="10/27/1990 17:56:53 GMT" interval=1000}}
 <br>
 Countdown Custom (Months/Days unit): {{countdown-custom-months-days startDate="1/1/2020" interval=1000}} {{! see app/components/countdown-custom-months-days.js }}
 <br>
@@ -12,6 +12,6 @@ Countdown Custom with custom html tag (Seconds unit): {{countdown-custom-seconds
 <br>
 Suffix & Max: {{countdown-string startDate="1/1/2017" suffix=true max=4}}
 <br>
-Static countdown (interval=0): {{countdown-string startDate=657050213000 interval=0}}
+Static countdown (interval=0): {{countdown-string startDate="10/27/1990 17:56:53 GMT" interval=0}}
 
 {{outlet}}

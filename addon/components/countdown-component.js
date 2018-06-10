@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import { later } from '@ember/runloop';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import countdown from 'countdownjs';
 
-export default Ember.Component.extend({
+export default Component.extend({
   //overridable values
   startDate: null,
   endDate: Date.now(),
@@ -20,12 +22,12 @@ export default Ember.Component.extend({
   tagName: '',
 
   //computed values
-  parsedStartDate: Ember.computed('startDate', {
+  parsedStartDate: computed('startDate', {
     get() {
       return new Date(this.get('startDate'));
     }
   }),
-  parsedEndDate: Ember.computed('endDate', {
+  parsedEndDate: computed('endDate', {
     get() {
       return new Date(this.get('endDate'));
     }
@@ -45,7 +47,7 @@ export default Ember.Component.extend({
   },
 
   update() {
-    Ember.run.later(this, function() {
+    later(this, function() {
       if(!this.isDestroyed || !this.isDestroying) {
         this.set('endDate', new Date());
         this.countdownText();
