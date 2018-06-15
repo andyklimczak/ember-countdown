@@ -12,7 +12,7 @@ import countdown from 'countdownjs';
 
 As a component:
 ```javascript
-{{countdown-string startDate=657050213000}}
+{{countdown-string startDate='11/24/1992 17:56:53 GMT'}}
 ```
 => ```25 years, 6 months, 18 days, 7 hours, 43 minutes and 35 seconds```
 
