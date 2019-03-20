@@ -1,6 +1,7 @@
 import layout from '../templates/components/countdown-html';
 import countdown from 'countdownjs';
 import CountdownComponent from 'ember-countdown/components/countdown-component';
+import { htmlSafe } from '@ember/template';
 
 export default CountdownComponent.extend({
   htmlTag: 'span',
@@ -11,12 +12,14 @@ export default CountdownComponent.extend({
     const newCountdown = countdown(this.get('parsedStartDate'), this.get('parsedEndDate'), this.get('units'), this.get('max'));
     const tag = this.get('htmlTag');
 
+    let text = null;
     if(this.get('suffix') && newCountdown.value > 0) {
-      this.set('text', `${newCountdown.toHTML(tag)} ${this.get('suffixFromNow')}`);
+      text = `${newCountdown.toHTML(tag)} ${this.get('suffixFromNow')}`;
     } else if(this.get('suffix') && newCountdown.value < 0) {
-      this.set('text', `${newCountdown.toHTML(tag)} ${this.get('suffixToNow')}`);
+      text = `${newCountdown.toHTML(tag)} ${this.get('suffixToNow')}`;
     } else {
-      this.set('text', newCountdown.toHTML(tag));
+      text = htmlSafe(newCountdown.toHTML(tag));
     }
+    this.set('text', htmlSafe(text));
   }
 });
